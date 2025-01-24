@@ -1,14 +1,12 @@
-from collections import  deque
+from  collections import deque
+n = int(input())
+myd = deque()
 
-num = int(input())
+for i in range(1,n+1):
+    myd.append(i)
 
-myq = deque()
+for i in range(n-1):
+    myd.popleft()
+    myd.append(myd.popleft())
 
-for i in range(1,num+1):
-    myq.append(i)
-
-while len(myq) > 1:
-    myq.popleft()
-    myq.append(myq.popleft())
-
-print(myq[0])
+print(myd[0])
